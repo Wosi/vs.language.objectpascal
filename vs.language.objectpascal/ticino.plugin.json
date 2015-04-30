@@ -1,0 +1,20 @@
+{
+	"pluginId": "vs.language.objectpascal",
+	"activationEvents": ["textModel:objectpascal"],
+	"mainModule": "./objectpascalMain",
+	"contributes": {
+		"language": [{
+			"id": "objectpascal",
+			"extensions": [ ".pas", ".dpr" ],
+			"aliases": [ "ObjectPascal", "pascal", "Delphi", "delphi" ],
+			"mimetypes": ["text/x-objectpascal-source", "text/x-objectpascal"]
+		}]
+	},
+	"scripts": {
+		"compile": "node ../../node_modules/gulp/bin/gulp.js --gulpfile ../gulpfile.js compile --dir vs.language.objectpascal"
+	},
+	"_testing": "./tests/objectpascalTests",
+	"_bundling": [
+		{ "name": "./objectpascalMain" }
+	]
+}
