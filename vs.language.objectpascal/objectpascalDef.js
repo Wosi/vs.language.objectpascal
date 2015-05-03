@@ -202,13 +202,13 @@ define(["require", "exports"], function (require, exports) {
             whitespace: [
                 [/[ \t\r\n]+/, ''],
                 [/{/, 'comment', '@comment'],
-                [/\(\*/, 'comment', '@comment'],
+                [/\(\*/, 'comment', '@braceasteriskcomment'],
                 [/\/\/.*$/, 'comment'],
             ],
             
             comment: [
-                [/[^(}|\*\))]+/, 'comment'],
-                [/(}|\*\))/, 'comment', '@pop'],
+                [/[^}]+/, 'comment'],
+                [/}/, 'comment', '@pop'],
                 //[/{@/, 'annotation'],  
                 [/{/, 'comment'],  
                 
@@ -219,6 +219,21 @@ define(["require", "exports"], function (require, exports) {
                 //[/\*\)/, 'comment', '@pop'],
                 //[/\*/, 'comment']                      
             ],
+            
+            braceasteriskcomment: [
+                //[/[^\*\)]+/, 'comment'],
+                [/((?!\*\)).)+/, 'comment'],
+                [/\*\)/, 'comment', '@pop'],
+                //[/{@/, 'annotation'],  
+                [/\(\*/, 'comment'],  
+                
+                //[/[^\*)]+/, 'comment'],
+                //[/\*)/, 'comment', '@pop'],
+                
+                //[/[^\*]+/, 'comment'],
+                //[/\*\)/, 'comment', '@pop'],
+                //[/\*/, 'comment']                      
+            ],            
             
             /*
             comment: [
