@@ -190,7 +190,9 @@ define(["require", "exports"], function (require, exports) {
             ],
             whitespace: [
                 [/[ \t\r\n]+/, ''],
-                [/{/, 'comment', '@comment'],
+                //[/{/, 'comment', '@comment'],
+                [/{(?!\$)/, 'comment', '@comment'],
+                [/{\$/, 'annotation', '@compilerdirective'],                
                 [/\(\*/, 'comment', '@braceasteriskcomment'],
                 [/\/\/.*$/, 'comment'],
             ],
@@ -205,7 +207,13 @@ define(["require", "exports"], function (require, exports) {
                 [/((?!\*\)).)+/, 'comment'],
                 [/\*\)/, 'comment', '@pop'],
                 [/\(\*/, 'comment'],                    
-            ],            
+            ],     
+            
+            compilerdirective: [
+                [/[^}]+/, 'annotation'],
+                [/}/, 'annotation', '@pop'],
+                [/{\$/, 'annotation'],                   
+            ],                   
 
             string: [
                 [/[^\\']+/, 'string'],
