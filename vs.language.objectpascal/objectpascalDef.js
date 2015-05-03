@@ -190,7 +190,6 @@ define(["require", "exports"], function (require, exports) {
             ],
             whitespace: [
                 [/[ \t\r\n]+/, ''],
-                //[/{/, 'comment', '@comment'],
                 [/{(?!\$)/, 'comment', '@comment'],
                 [/{\$/, 'annotation', '@compilerdirective'],                
                 [/\(\*/, 'comment', '@braceasteriskcomment'],
