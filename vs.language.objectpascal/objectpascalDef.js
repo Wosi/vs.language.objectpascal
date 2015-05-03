@@ -21,14 +21,8 @@ define(["require", "exports"], function (require, exports) {
             { token: 'keyword.tag-begin', open: 'interface', close: 'end' },
             { token: 'keyword.tag-begin', open: 'unit', close: 'end' },
             { token: 'keyword.tag-begin', open: 'program', close: 'end' },
-            //{ token: 'keyword.tag-program', open: 'program', close: 'end.' },
-            //{ token: 'keyword.tag-try', open: 'try', close: 'end' },
         ],
-        /*
-        enhancedBrackets: [
-            { open: /begin$/i, closeComplete: 'end' },
-            { open: /unit$/i, closeComplete: 'end' },
-        ],      */  
+
         textAfterBrackets: true,
         
         // the default separators except `@$`
@@ -174,16 +168,11 @@ define(["require", "exports"], function (require, exports) {
         // The main tokenizer for our languages
         tokenizer: {
             root: [
-                //[/[a-zA-Z_$][\w$]*/, { cases: { '@keywords': { token: 'keyword.$0' }, '@default': 'identifier' } }],
                 { include: '@whitespace' },
-                //[/end\w*/, { token: 'keyword.tag-begin', bracket: '@close' }],
-                //[/[a-zA-Z_]\w*/, { cases: { '@tagwords': { token: 'keyword.tag-$0', bracket: '@open' }, '@keywords': { token: 'keyword.$0' }, '@default': 'identifier' } }],
                 [/[a-zA-Z_]\w*/, { cases: { '@tagwords': '@brackets', '@keywords': { token: 'keyword.$0' }, '@default': 'identifier' } }],
                 [/[{}()\[\]]/, '@brackets'],                                
                 [/[<>](?!@symbols)/, '@brackets'],
                 [/@symbols/, { cases: { '@operators': 'delimiter', '@default': '' } }],
-                ///[a-zA-Z_]\w*/, { cases: { '@tagwords': { token: 'keyword.tag-$0', bracket: '@open' }, '@keywords': { token: 'keyword.$0' }, '@default': 'identifier' } }],
-                //[/\{/, 'comment', '@comment'],
                 [/@\s*[a-zA-Z_\$][\w\$]*/, 'annotation'],
                 [/\d*\d+[eE]([\-+]?\d+)?[fFdD]?/, 'number.float'],
                 [/\d*\.\d+([eE][\-+]?\d+)?[fFdD]?/, 'number.float'],
@@ -209,39 +198,15 @@ define(["require", "exports"], function (require, exports) {
             comment: [
                 [/[^}]+/, 'comment'],
                 [/}/, 'comment', '@pop'],
-                //[/{@/, 'annotation'],  
-                [/{/, 'comment'],  
-                
-                //[/[^\*)]+/, 'comment'],
-                //[/\*)/, 'comment', '@pop'],
-                
-                //[/[^\*]+/, 'comment'],
-                //[/\*\)/, 'comment', '@pop'],
-                //[/\*/, 'comment']                      
+                [/{/, 'comment'],                   
             ],
             
             braceasteriskcomment: [
-                //[/[^\*\)]+/, 'comment'],
                 [/((?!\*\)).)+/, 'comment'],
                 [/\*\)/, 'comment', '@pop'],
-                //[/{@/, 'annotation'],  
-                [/\(\*/, 'comment'],  
-                
-                //[/[^\*)]+/, 'comment'],
-                //[/\*)/, 'comment', '@pop'],
-                
-                //[/[^\*]+/, 'comment'],
-                //[/\*\)/, 'comment', '@pop'],
-                //[/\*/, 'comment']                      
+                [/\(\*/, 'comment'],                    
             ],            
-            
-            /*
-            comment: [
-                [/[^\{]+/, 'comment'],
-                ['\\}', 'comment', '@pop'],
-                [/[\}]/, 'comment']
-            ],
-            */
+
             string: [
                 [/[^\\']+/, 'string'],
                 [/@escapes/, 'string.escape'],
