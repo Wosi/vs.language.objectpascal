@@ -207,13 +207,17 @@ define(["require", "exports"], function (require, exports) {
             ],
             
             comment: [
-                [/[^}]+/, 'comment'],
-                [/}/, 'comment', '@pop'],
+                [/[^(}|\*\))]+/, 'comment'],
+                [/(}|\*\))/, 'comment', '@pop'],
+                //[/{@/, 'annotation'],  
                 [/{/, 'comment'],  
                 
-                [/[^\*]+/, 'comment'],
-                [/\*\)/, 'comment', '@pop'],
-                [/\*/, 'comment']                      
+                //[/[^\*)]+/, 'comment'],
+                //[/\*)/, 'comment', '@pop'],
+                
+                //[/[^\*]+/, 'comment'],
+                //[/\*\)/, 'comment', '@pop'],
+                //[/\*/, 'comment']                      
             ],
             
             /*
