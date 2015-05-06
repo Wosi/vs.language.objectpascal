@@ -177,10 +177,15 @@ define(["require", "exports"], function (require, exports) {
         tokenizer: {
             root: [
                 { include: '@whitespace' },
-                [/[a-zA-Z_]\w*/, { cases: { '@tagwords': '@brackets', '@keywords': { token: 'keyword.$0' }, '@default': 'identifier' } }],
-                [/[{}()\[\]]/, '@brackets'],                                
+                [/[a-zA-Z_]\w*/, { cases: { 
+                  '@tagwords': '@brackets',
+                  '@keywords': { token: 'keyword.$0' }, 
+                  '@default': 'identifier' } }],
+                [/[()\[\]]/, '@brackets'],                                
                 [/[<>](?!@symbols)/, '@brackets'],
-                [/@symbols/, { cases: { '@operators': 'delimiter', '@default': '' } }],
+                [/@symbols/, { cases: {   
+                  '@operators': 'keyword.operator',
+                  '@default': '' } }],
                 [/@\s*[a-zA-Z_\$][\w\$]*/, 'number.hex'],
                 [/\d*\d+[eE]([\-+]?\d+)?[fFdD]?/, 'number.float'],
                 [/\d*\.\d+([eE][\-+]?\d+)?[fFdD]?/, 'number.float'],
