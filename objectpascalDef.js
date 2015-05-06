@@ -182,7 +182,17 @@ define(["require", "exports"], function (require, exports) {
             '^',
             '@',
             ':=',            
-        ],
+          ],
+          
+          flowchangers: [
+            'exit',
+            'continue',
+            'break',
+            'abort',
+            'halt',
+            'RunError',
+            'raise'
+          ],
         // we include these common regular expressions
         symbols: /[=><!~?:&|+\-*\/\^%]+/,
         escapes: /\\(?:[abfnrtv\\"']|x[0-9A-Fa-f]{1,4}|u[0-9A-Fa-f]{4}|U[0-9A-Fa-f]{8})/,
@@ -193,6 +203,7 @@ define(["require", "exports"], function (require, exports) {
                 [/[a-zA-Z_]\w*/, { cases: { 
                   '@tagwords': '@brackets',
                   '@operators': 'keyword.operator',
+                  '@flowchangers': 'token.keyword.flow',
                   '@keywords': { token: 'keyword.$0' }, 
                   '@default': 'identifier' } }],
                 [/[()\[\]]/, '@brackets'],                                
