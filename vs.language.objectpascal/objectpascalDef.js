@@ -146,7 +146,7 @@ define(["require", "exports"], function (require, exports) {
         operators: [
             '=',
             '>',
-            '<',
+            '<',                                             
             '!',
             '~',
             '?',
@@ -179,6 +179,7 @@ define(["require", "exports"], function (require, exports) {
                 { include: '@whitespace' },
                 [/[a-zA-Z_]\w*/, { cases: { 
                   '@tagwords': '@brackets',
+                  '@operators': 'keyword.operator',
                   '@keywords': { token: 'keyword.$0' }, 
                   '@default': 'identifier' } }],
                 [/[()\[\]]/, '@brackets'],                                
