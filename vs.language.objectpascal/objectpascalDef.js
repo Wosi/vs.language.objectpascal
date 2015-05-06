@@ -21,6 +21,7 @@ define(["require", "exports"], function (require, exports) {
             { token: 'keyword.tag-begin', open: 'interface', close: 'end' },
             { token: 'keyword.tag-begin', open: 'unit', close: 'end' },
             { token: 'keyword.tag-begin', open: 'program', close: 'end' },
+            { token: 'keyword.tag-if', open: 'if', close: 'then' },
         ],
 
         textAfterBrackets: true,
@@ -140,6 +141,8 @@ define(["require", "exports"], function (require, exports) {
             'class',
             'program',
             'interface',
+            'if',
+            'then',
             'end'
         ],     
            
