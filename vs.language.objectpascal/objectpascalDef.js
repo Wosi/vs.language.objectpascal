@@ -24,6 +24,11 @@ define(["require", "exports"], function (require, exports) {
         ],
 
         textAfterBrackets: true,
+        autoClosingPairs: [
+          ['{', '}'], 
+          ['[', ']'], 
+          ['(', ')'], 
+          ['\'', '\'']],
         
         // the default separators except `@$`
         wordDefinition: /(-?\d*\.\d\w*)|([^\`\~\!\#\%\^\&\*\(\)\-\=\+\[\{\]\}\\\|\;\:\'\"\,\.\<\>\/\?\s]+)/g,
