@@ -23,8 +23,9 @@ define(["require", "exports"], function (require, exports) {
             { token: 'keyword.tag-begin', open: 'program', close: 'end' },
             { token: 'keyword.tag-if', open: 'if', close: 'then' },
             { token: 'keyword.tag-repeat', open: 'repeat', close: 'until' },
-            { token: 'keyword.tag-while', open: 'while', close: 'do' },
-            { token: 'keyword.tag-while', open: 'for', close: 'do' },
+            { token: 'keyword.tag-do', open: 'while', close: 'do' },
+            { token: 'keyword.tag-do', open: 'for', close: 'do' },
+            { token: 'keyword.tag-do', open: 'on', close: 'do' },            
         ],
 
         textAfterBrackets: true,
@@ -151,6 +152,7 @@ define(["require", "exports"], function (require, exports) {
             'while',
             'do',
             'for',
+            'on',
             'end'
         ],     
            
