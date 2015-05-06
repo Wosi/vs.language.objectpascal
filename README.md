@@ -5,9 +5,10 @@ Syntax highlighting for ObjectPascal in Visual Studio Code
 This is a first attempt to support ObjectPascal and Delphi in Visual Studio Code (https://code.visualstudio.com/)
 
 # Installation
-Copy the directory vs.language.objectpascal into the editor's plugin directory.
-In Windows it is located under:
-C:\Users\USERNAME\AppData\Local\Code\app-0.1.0\resources\app\plugins
+Clone this repository into the editor's plugin directory to a new subfolder named vs.language.objectpascal.
+
+Example target directory for Windows 7:
+C:\Users\USERNAME\AppData\Local\Code\app-0.1.0\resources\app\plugins\vs.language.objectpascal
 
 That's all! 
 
