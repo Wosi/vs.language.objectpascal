@@ -23,6 +23,7 @@ define(["require", "exports"], function (require, exports) {
             { token: 'keyword.tag-begin', open: 'program', close: 'end' },
             { token: 'keyword.tag-if', open: 'if', close: 'then' },
             { token: 'keyword.tag-repeat', open: 'repeat', close: 'until' },
+            { token: 'keyword.tag-while', open: 'while', close: 'do' },
         ],
 
         textAfterBrackets: true,
@@ -146,6 +147,8 @@ define(["require", "exports"], function (require, exports) {
             'then',
             'repeat',
             'until',
+            'while',
+            'do',
             'end'
         ],     
            
