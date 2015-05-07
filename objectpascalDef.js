@@ -216,7 +216,9 @@ define(["require", "exports"], function (require, exports) {
           
           constants: [
              'nil',
-          ],
+             'self',
+             'result',
+          ],                              
           
         // we include these common regular expressions
         symbols: /[=><!~?:&|+\-*\/\^%]+/,
@@ -230,7 +232,7 @@ define(["require", "exports"], function (require, exports) {
                   '@operators': 'keyword.operator',
                   '@flowchangers': 'token.keyword.flow',
                   '@warnings': 'token.warn-token',
-                  '@constants': 'token.variable.predefined.php',
+                  '@constants': 'token.key',    
                   '@types': 'token.type',
                   '@keywords': { token: 'keyword.$0' }, 
                   '@default': 'identifier' } }],
