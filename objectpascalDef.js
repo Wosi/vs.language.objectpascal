@@ -99,6 +99,7 @@ define(["require", "exports"], function (require, exports) {
             'ON',
             'OR',
             'OUT',
+            'OVERLOAD',
             'PACKED',
             'POINTER',
             'PRIVATE',
