@@ -4,6 +4,8 @@ Syntax highlighting for ObjectPascal in Visual Studio Code
 
 This is a first attempt to support ObjectPascal and Delphi in Visual Studio Code (https://code.visualstudio.com/)
 
+Don't miss my [plugin for ObjectPascal forms modules](https://github.com/Wosi/vs.language.objectpascal-forms-module)
+
 # Installation
 Clone this repository into the editor's plugin directory to a new subfolder named vs.language.objectpascal.
 
