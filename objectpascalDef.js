@@ -101,6 +101,7 @@ define(["require", "exports"], function (require, exports) {
             'READ',   
             'RECORD',
             'REFERENCE',
+            'REINTRODUCE',
             'REPEAT',
             'RESIDENT',
             'RESOURCESTRING',
