@@ -178,11 +178,12 @@ define(["require", "exports"], function (require, exports) {
           ],
           
           warnings: [
-            'RunError',
-            'raise',
+            'assert',
             'deprecated',
             'experimental',
-            'assert'
+            'platform',
+            'raise',
+            'RunError',                                                
           ],
           
           types: [   
