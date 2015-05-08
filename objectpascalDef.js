@@ -46,6 +46,7 @@ define(["require", "exports"], function (require, exports) {
             'ASSEMBLER',
             'BEGIN',
             'CASE',
+            'CDECL',
             'CONST',
             'CONSTRUCTOR',
             'DESTRUCTOR',
