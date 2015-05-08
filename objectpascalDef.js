@@ -247,7 +247,7 @@ define(["require", "exports"], function (require, exports) {
                 [/@\s*[a-zA-Z_\$][\w\$]*/, 'number.hex'],
                 [/\d*\d+[eE]([\-+]?\d+)?[fFdD]?/, 'number.float'],
                 [/\d*\.\d+([eE][\-+]?\d+)?[fFdD]?/, 'number.float'],
-                [/0[xX][0-9a-fA-F_]*[0-9a-fA-F][Ll]?/, 'number.hex'],
+                [/[\$][0-9a-fA-F_]*[0-9a-fA-F]?/, 'number.hex'],
                 [/0[0-7_]*[0-7][Ll]?/, 'number.octal'],
                 [/0[bB][0-1_]*[0-1][Ll]?/, 'number.binary'],
                 [/\d+[fFdD]/, 'number.float'],
