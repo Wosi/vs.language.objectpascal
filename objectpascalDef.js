@@ -21,6 +21,7 @@ define(["require", "exports"], function (require, exports) {
             { token: 'keyword.tag-begin', open: 'interface', close: 'end' },
             { token: 'keyword.tag-begin', open: 'unit', close: 'end' },
             { token: 'keyword.tag-begin', open: 'program', close: 'end' },
+            { token: 'keyword.tag-begin', open: 'case', close: 'end' },
             { token: 'keyword.tag-if', open: 'if', close: 'then' },
             { token: 'keyword.tag-repeat', open: 'repeat', close: 'until' },
             { token: 'keyword.tag-do', open: 'while', close: 'do' },
@@ -45,7 +46,6 @@ define(["require", "exports"], function (require, exports) {
             'ARRAY',
             'ASM',
             'ASSEMBLER',
-            'CASE',
             'CDECL',
             'CONST',
             'CONSTRUCTOR',
@@ -126,6 +126,7 @@ define(["require", "exports"], function (require, exports) {
             'do',
             'for',
             'on',
+            'case',
             'end'
         ],     
            
