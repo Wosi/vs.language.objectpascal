@@ -222,9 +222,13 @@ define(["require", "exports"], function (require, exports) {
              'true',
              'false', 
              'nil',
+          ],  
+          
+          specialsymbols: [
              'self',
              'result',
-          ],                              
+          ],
+                                      
           
         // we include these common regular expressions
         symbols: /[=><!~?:&|+\-*\/\^%]+/,
@@ -238,7 +242,8 @@ define(["require", "exports"], function (require, exports) {
                   '@operators': 'token.keyword.operator',
                   '@flowchangers': 'token.keyword.flow',
                   '@warnings': 'token.warn-token',
-                  '@constants': 'token.key',    
+                  '@specialsymbols': 'token.key',
+                  '@constants': 'token.number',    
                   '@types': 'token.type',
                   '@keywords': { token: 'keyword' }, 
                   '@default': 'identifier' } }],
