@@ -5,7 +5,7 @@
 	"contributes": {
 		"language": [{
 			"id": "objectpascal",
-			"extensions": [ ".pas", ".dpr", ".pp", ".lpi", ".inc" ],
+			"extensions": [ ".pas", ".dpr", ".pp", ".lpr", ".inc" ],
 			"aliases": [ "ObjectPascal", "pascal", "Delphi", "delphi" ],
 			"mimetypes": ["text/x-objectpascal-source", "text/x-objectpascal"]
 		}]
