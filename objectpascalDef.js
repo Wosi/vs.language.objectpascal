@@ -220,7 +220,7 @@ define(["require", "exports"], function (require, exports) {
           
         // we include these common regular expressions
         symbols: /[=><!~?:&|+\-*\/\^%]+/,
-        escapes: /\\(?:[abfnrtv\\"']|x[0-9A-Fa-f]{1,4}|u[0-9A-Fa-f]{4}|U[0-9A-Fa-f]{8})/,
+        escapes: /\\(?:[abfnrtv"']|x[0-9A-Fa-f]{1,4}|u[0-9A-Fa-f]{4}|U[0-9A-Fa-f]{8})/,
         // The main tokenizer for our languages
         tokenizer: {
             root: [
@@ -249,11 +249,10 @@ define(["require", "exports"], function (require, exports) {
                 [/\d+[fFdD]/, 'number.float'],
                 [/\d+[lL]?/, 'number'],
                 [/[;,.]/, 'delimiter'],
-                //[/'([^'\\]|\\.)*$/, 'string.invalid'],
+                [/'([^'])*$/, 'string.invalid'],
                 [/'/, 'string', '@string'],
-                [/'[^\\']'/, 'string'],
                 [/(')(@escapes)(')/, ['string', 'string.escape', 'string']],
-                [/['\r\n]/, 'string.invalid']
+                [/'/, 'string.invalid']
             ],
             whitespace: [
                 [/[ \t\r\n]+/, ''],
@@ -282,10 +281,10 @@ define(["require", "exports"], function (require, exports) {
             ],                   
 
             string: [
-                [/[^'''\r\n]+/, 'string'],
-                //[/@escapes/, 'string.escape'],
+                [/[^']+/, 'string'],
+                [/@escapes/, 'string.escape'],
                 //[/\\./, 'string.escape.invalid'],
-                [/['\r\n]/, 'string', '@pop']
+                [/'/, 'string', '@pop']
             ],
         },
     };
