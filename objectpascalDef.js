@@ -249,11 +249,11 @@ define(["require", "exports"], function (require, exports) {
                 [/\d+[fFdD]/, 'number.float'],
                 [/\d+[lL]?/, 'number'],
                 [/[;,.]/, 'delimiter'],
-                [/'([^'\\]|\\.)*$/, 'string.invalid'],
+                //[/'([^'\\]|\\.)*$/, 'string.invalid'],
                 [/'/, 'string', '@string'],
                 [/'[^\\']'/, 'string'],
                 [/(')(@escapes)(')/, ['string', 'string.escape', 'string']],
-                [/'/, 'string.invalid']
+                [/['\r\n]/, 'string.invalid']
             ],
             whitespace: [
                 [/[ \t\r\n]+/, ''],
@@ -282,10 +282,10 @@ define(["require", "exports"], function (require, exports) {
             ],                   
 
             string: [
-                [/[^\\']+/, 'string'],
-                [/@escapes/, 'string.escape'],
-                [/\\./, 'string.escape.invalid'],
-                [/'/, 'string', '@pop']
+                [/[^'''\r\n]+/, 'string'],
+                //[/@escapes/, 'string.escape'],
+                //[/\\./, 'string.escape.invalid'],
+                [/['\r\n]/, 'string', '@pop']
             ],
         },
     };
