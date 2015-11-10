@@ -1,3 +1,7 @@
+# This plugin is no more. It has ceased to be. It's expired and gone to meet its maker. This is a late plugin. It's a stiff. Bereft of life, it rests in peace. This is an ex-plugin
+
+The language grammar definition format is no longer supported in VSCode. So don't try to use it. There will be a **new much better solution** in the near future. 
+
 # vs.language.objectpascal
 
 Syntax highlighting for ObjectPascal in Visual Studio Code
